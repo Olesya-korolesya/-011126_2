@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список товаров</title>
+</head>
+<body>
+    <h1>Каталог товаров</h1>
+    <ul>
+        {% for product in products %}
+            <li><strong>{{ product.name }}</strong> — {{ product.price }} руб. (В наличии: {{ product.quantity }} шт.) — <small>Добавлен: {{ product.created_at }}</small></li>
+        {% empty %}
+            <li>Товаров пока нет.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
